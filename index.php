@@ -10,7 +10,6 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Prepared statement kullanarak SQL sorgusu
     $stmt = $mysqli->prepare("SELECT * FROM admins WHERE a_username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
